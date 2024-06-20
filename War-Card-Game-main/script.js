@@ -18,7 +18,7 @@ const CARD_VALUE_MAP = {
   A: 14
 }
 
-// Constants defining elements on the page/DOM elements - selecting class names
+// Constants defining elements on the page/DOM elements - selecting class names, then storing them as variables
 const computerCardSlot = document.querySelector(".computer-card-slot")
 const playerCardSlot = document.querySelector(".player-card-slot")
 const computerDeckElement = document.querySelector(".computer-deck")
