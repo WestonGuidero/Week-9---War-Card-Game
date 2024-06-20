@@ -1,0 +1,124 @@
+*, *::after, *::before { 
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 20px;
+  display: grid;
+
+  gap: .5rem;
+  cursor: pointer;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.deck {
+  margin-bottom: 20px;
+  grid-column: span 2;
+  width: 100px;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: .5rem;
+  color: white;
+  user-select: none;
+}
+
+/* deck colors */
+.computer-deck {
+  background-color: green;
+}
+.player-deck {
+  background-color: blue;
+}
+
+.computer-score {
+  background-color: green;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 150px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-score {
+  background-color: blue;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 150px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-score::before,
+.computer-score::before {
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+.player-score::after,
+.computer-score::after {
+  margin-left: 5px;
+}
+
+.player-score,
+.computer-score {
+  width: 50px;
+  text-align: center;
+}
+
+.scores-container {
+  display: flex;
+  justify-content: space-around;
+}
+.text {
+  grid-column: span 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.text > * {
+  margin: auto;
+}
+.card {
+  position: absolute;
+  margin-right: 10px;
+  font-size: 30px;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin: 3 auto;
+  border: black;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid black
+}
+
+.card::after {
+  position: absolute;
+  content: attr(data-value);
+  font-size: 1rem;
+}
