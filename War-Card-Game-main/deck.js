@@ -1,3 +1,4 @@
+// defined constants for the deck via arrays
 const SUITS = ["♠", "♣", "♥", "♦"]
 const VALUES = [
   "A",
@@ -15,6 +16,7 @@ const VALUES = [
   "K"
 ]
 
+// exports deck class to be used in script.js
 export default class Deck {
   constructor(cards = freshDeck()) {
     this.cards = cards
@@ -42,6 +44,7 @@ export default class Deck {
   }
 }
 
+// card class for each card in the deck
 class Card {
   constructor(suit, value) {
     this.suit = suit
@@ -61,6 +64,7 @@ class Card {
   }
 }
 
+// function to create a new deck flatmaps the SUITS and VALUES to where the arrays are all combined (SUITS and VALUES), rather than seperate arrays.
 function freshDeck() {
   return SUITS.flatMap(suit => {
     return VALUES.map(value => {

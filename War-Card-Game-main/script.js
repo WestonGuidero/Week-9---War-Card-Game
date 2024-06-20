@@ -31,6 +31,7 @@ let playerDeck, computerDeck, inRound, stop;
 let playerScore = 0;
 let computerScore = 0;
 
+// once the start button is clicked it will start the game and shuffle the deck
 document.addEventListener("click", () => {
   if (stop) {
     startGame()
@@ -44,6 +45,7 @@ document.addEventListener("click", () => {
   }
 })
 
+// function to start the game and shuffle the deck when the start button is clicked, splits the deck in half and makes new deck for player and computer deck
 startGame()
 function startGame() {
   const deck = new Deck()
@@ -60,6 +62,7 @@ function startGame() {
   cleanBeforeRound()
 }
 
+// function to clean the page before each round
 function cleanBeforeRound() {
   inRound = false
   computerCardSlot.innerHTML = ""
@@ -70,6 +73,7 @@ function cleanBeforeRound() {
   updateScore();
 }
 
+// function once card is flipped it will update the score of the player and computer and display if PLAYER won, lost or if it was a draw.
 function flipCards() {
   inRound = true
 
@@ -110,6 +114,7 @@ function flipCards() {
 updateDeckCount();
 updateScore();
 
+// functions to update the number of cards left in the deck, scores, round winner and if the game is over
 function updateDeckCount() {
   computerDeckElement.innerText = computerDeck.numberOfCards
   playerDeckElement.innerText = playerDeck.numberOfCards
